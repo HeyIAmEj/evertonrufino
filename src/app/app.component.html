@@ -1,4 +1,3 @@
-
 <div class="container-fluid h-100 {{theme.bg}} {{theme.text}}">
   <div class="row h-100">
 
@@ -23,18 +22,18 @@
 
     <!--COLUNA DE CONTEUDO-->
     <div class="col-sm-12 col-md-9 m-0 p-0 h-100 overflow-hidden">
-      <!--      <div class="container px-0 py-0 h-100 bg-secondary overflow-hidden">-->
-
       <div class="container-fluid py-0 mx-0 {{theme.primary}} w-100 h-100 overflow-auto">
 
 
         <!--MENU MOBILE-->
         <div class=" card col-12 mb-2 {{theme.bg}} overflow-hidden d-block d-md-none">
           <span ngModel="isCollapsed"></span>
-          <a (click)="toggleMenu()" class="nav-link"><mat-icon inline=true aria-hidden="false" class="p-0 m-0" aria-label="MenuIcon">menu</mat-icon> Menu </a>
-
+          <a (click)="toggleMenu()" class="nav-link">
+            <mat-icon inline=true aria-hidden="false" class="p-0 m-0" aria-label="MenuIcon">menu</mat-icon>
+            Menu </a>
 
           <div [collapse]="isCollapsed" class="{{theme.bg}} p-2 overflow-auto">
+            <hr class="my-2">
             <img src="/assets/profile_pic.jpg" class="rounded-circle img-fluid mx-auto d-block" alt="Profile Picture">
             <h2 class="text-center pt-1 my-1">
               Everton Rufino
@@ -51,7 +50,6 @@
             </nav>
           </div>
         </div>
-
 
 
         <!--Linha 0-->
@@ -123,5 +121,4 @@
       </div>
     </div>
   </div>
-  <!--  </div>-->
 </div>
