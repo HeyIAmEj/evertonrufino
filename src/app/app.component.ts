@@ -1,11 +1,13 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { CollapseModule, CollapseDirective } from "ngx-bootstrap/collapse";
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Veve';
   theme_light = {
     "bg": "bg-white",
@@ -19,4 +21,14 @@ export class AppComponent {
   };
   theme:any=this.theme_dark;
 
+  isCollapsed: boolean = false;
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  toggleMenu(){
+    this.isCollapsed = !this.isCollapsed;
+  }
 }
+

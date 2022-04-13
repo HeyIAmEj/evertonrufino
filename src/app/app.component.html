@@ -1,6 +1,9 @@
+
 <div class="container-fluid h-100 {{theme.bg}} {{theme.text}}">
   <div class="row h-100">
-    <div class="col-3 h-100 py-2 overflow-auto">
+
+    <!--COLUNA DE MENU-->
+    <div class="col-md-3 h-100 py-2 overflow-auto d-none d-md-block">
       <img src="/assets/profile_pic.jpg" class="rounded-circle img-fluid mx-auto d-block" alt="Profile Picture">
       <h2 class="text-center pt-1 my-1">
         Everton Rufino
@@ -17,18 +20,44 @@
       </nav>
     </div>
 
-    <div class="col-9 m-0 p-0 h-100 overflow-hidden">
+
+    <!--COLUNA DE CONTEUDO-->
+    <div class="col-sm-12 col-md-9 m-0 p-0 h-100 overflow-hidden">
       <!--      <div class="container px-0 py-0 h-100 bg-secondary overflow-hidden">-->
-      <div class="container py-0 mx-0 {{theme.primary}} w-100 h-100 overflow-auto">
+
+      <div class="container-fluid py-0 mx-0 {{theme.primary}} w-100 h-100 overflow-auto">
 
 
-        <h1 class="card p-2 mx-0 mt-0 mb-5 text-center {{theme.bg}}">Sobre mim</h1>
+        <!--MENU MOBILE-->
+        <div class=" card col-12 mb-2 {{theme.bg}} overflow-hidden d-block d-md-none">
+          <span ngModel="isCollapsed"></span>
+          <a (click)="toggleMenu()" class="nav-link"><mat-icon inline=true aria-hidden="false" class="p-0 m-0" aria-label="MenuIcon">menu</mat-icon> Menu </a>
+
+
+          <div [collapse]="isCollapsed" class="{{theme.bg}} p-2 overflow-auto">
+            <img src="/assets/profile_pic.jpg" class="rounded-circle img-fluid mx-auto d-block" alt="Profile Picture">
+            <h2 class="text-center pt-1 my-1">
+              Everton Rufino
+            </h2>
+            <p class="text-muted text-center my-0">Java Backend Developer</p>
+            <p class="text-muted text-center my-0">Fullstack Developer</p>
+            <hr>
+            <nav class="nav flex-column">
+              <a class="nav-link" href="#">Pagina Inicial</a>
+              <a target="_blank" class="nav-link" href="https://github.com/HeyIAmEj?tab=repositories">Projetos</a>
+              <a class="nav-link active" href="#">Sobre mim</a>
+              <a class="nav-link" href="#">Contato</a>
+              <a target="_blank" class="nav-link bg-beta beta" href="https://github.com/HeyIAmEj">Github</a>
+            </nav>
+          </div>
+        </div>
+
 
 
         <!--Linha 0-->
-        <div class="row m-0 ">
+        <div class="row m-0 mt-1">
           <div class="card col-12 w-100 {{theme.bg}}">
-            <p class="h4 m-2 card-title">Curiosidades</p>
+            <p class="h4 m-2 card-title">Sobre mim</p>
             <hr class="my-2">
             <div class="card-body">
               <p class="card-text">Meu nome é Everton (mais conhecido como Veve), sou entusiasta de tecnologia e busco
