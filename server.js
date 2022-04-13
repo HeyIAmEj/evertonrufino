@@ -5,9 +5,8 @@ const app = express();
 
 app.use(express.static(__dirname + '/dist/AngularFront'));
 
-app.get('/*', function (req, res) {
-  res.sendFile('index.html', { root: 'dist/AngularFront/' }
-  );
+app.get('/*', (req,res,next) => {
+  res.sendFile(path.join(__dirname + '/dist/AngularFront/index.html'));
 });
 
 
