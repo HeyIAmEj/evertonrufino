@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+$primary:#fff;
+$primary-dark: #492c89;
+$primary-light: #492c89;
+$secondary: #5d409d;
+$dark: #212529;
+
+$theme-colors: (
+  "primary":$primary-dark,
+  "primary-dark": $primary-dark,
+  "primary-light": $primary-light,
+  "secondary": $secondary,
+  "dark": $dark,
+  "success": #198754,
+  "info": #0dcaf0,
+  "warning": #FFC107,
+  "danger": #dc3545,
+  "light": #f8f9fa
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+/**{
+  font-family: "Times New Roman", Times, serif;
+}*/
+.card-text {
+  font-size: 17px;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #303030;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #404040;
+}
+
+
+.active {
+  background: $secondary;
+}
+
+a:hover {
+  color: $secondary;
+}
