@@ -10,10 +10,18 @@ import {MatIconModule} from "@angular/material/icon";
 import { CollapseModule } from "ngx-bootstrap/collapse";
 import { ModalModule } from "ngx-bootstrap/modal";
 import {FormsModule} from "@angular/forms";
+import { AboutmeComponent } from './components/aboutme/aboutme.component';
+import { ContactmeComponent } from './components/contactme/contactme.component';
+import { IndexComponent } from './components/index/index.component';
+import {MobilemenuComponent} from "./shared/mobilemenu/mobilemenu.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AboutmeComponent,
+    ContactmeComponent,
+    IndexComponent,
+    MobilemenuComponent
   ],
   imports: [
     BrowserModule,

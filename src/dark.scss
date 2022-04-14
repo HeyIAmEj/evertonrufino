@@ -1,19 +1,10 @@
-$enable-responsive-font-sizes: true;
+/*@import "dark";*/
+
+$enable-responsive-font-sizes:true;
 $primary: #492c89;
-$p1: #492c89;
-$p2: #FFC107;
-$p3: #dc3545;
-//$primary: #FFC107;
-//$primary: #dc3545;
 $secondary: #5d409d;
+$theme: #212529;
 
-$theme: red;
-$theme-dark: #212529;
-$theme-light: #f8f9fa;
-
-
-//$nav-link-color:white;
-//$body-color:$theme-text;*/
 
 $theme-colors: (
   "primary":$primary,
@@ -24,9 +15,7 @@ $theme-colors: (
   "warning": #FFC107,
   "danger": #dc3545,
   "light": #f8f9fa,
-  "theme":$theme,
-  "theme-dark":$theme-dark,
-  "theme-light":$theme-light
+  "theme":$theme
 );
 
 
@@ -34,10 +23,16 @@ $theme-colors: (
 html, body {
   height: 100%;
 }
-
 body {
   margin: 0;
   font-family: "Times New Roman", Times, serif;
+}
+
+/**{
+  font-family: "Times New Roman", Times, serif;
+}*/
+.card-text {
+  font-size: 17px;
 }
 
 /* width */
@@ -60,25 +55,13 @@ body {
   background: #404040;
 }
 
-.active{
-  background: #61616130;
+
+.active {
+  background: $secondary;
 }
 
-.active1 {
-  background: $p1;
+a:hover {
+  color: $secondary;
 }
-.active2 {
-  background: $p2;
-}
-.active3 {
-  background: $p3;
-}
-
-
-.card-text {
-  font-size: 17px;
-}
-
-
 
 @import "../node_modules/bootstrap/scss/bootstrap";

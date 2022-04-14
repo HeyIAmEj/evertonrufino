@@ -1,34 +1,33 @@
-import {Component, OnInit} from '@angular/core';
-import { CollapseModule, CollapseDirective } from "ngx-bootstrap/collapse";
-
+import {Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {CollapseModule} from "ngx-bootstrap/collapse";
+import {ModalModule} from "ngx-bootstrap/modal";
+import {response} from "express";
+import {CustomthemeService} from "./shared/service/customtheme.service";
+import {toInt} from "ngx-bootstrap/chronos/utils/type-checks";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'Veve';
-  theme_light = {
-    "bg": "bg-white",
-    "primary": "bg-primary-light",
-    "text": "text-dark"
-  };
-  theme_dark = {
-    "bg": "bg-dark",
-    "primary": "bg-primary-dark",
-    "text": "text-white"
-  };
-  theme:any=this.theme_dark;
+  customthemeservice: CustomthemeService;
+  bgtheme: string = "";
+  texttheme: string = "";
+  ptheme: number = 0;
 
-  isCollapsed: boolean = false;
-  constructor() { }
+  constructor(customthemeservice: CustomthemeService) {
+    this.bgtheme = customthemeservice.btheme;
+    this.texttheme = customthemeservice.ttheme;
+    this.ptheme = customthemeservice.ptheme;
+    this.customthemeservice = customthemeservice;
+  }
 
   ngOnInit(): void {
   }
 
-  toggleMenu(){
-    this.isCollapsed = !this.isCollapsed;
-  }
+
+
 }
 
