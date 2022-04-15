@@ -4,12 +4,12 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class CustomthemeService {
-  // btheme: string = "bg-theme-dark";
-  // ttheme: string = "text-theme-light";
+  btheme: string = "bg-theme-dark";
+  ttheme: string = "text-theme-light";
   ptheme: number = 1;
 
-  btheme:string="bg-theme-light";
-  ttheme:string="text-theme-dark";
+  // btheme:string="bg-theme-light";
+  // ttheme:string="text-theme-dark";
 
   constructor() {
   }
@@ -17,14 +17,12 @@ export class CustomthemeService {
   changeTheme(lum: number, primary: number) {
     if (lum == 0) {
       this.btheme = "bg-theme-dark";
-      this.btheme = "text-theme-light";
+      this.ttheme = "text-theme-light";
     } else {
       this.btheme = "bg-theme-light";
-      this.btheme = "text-theme-dark";
+      this.ttheme = "text-theme-dark";
     }
     this.ptheme = primary;
-    console.log("setou");
-
   }
 
 
