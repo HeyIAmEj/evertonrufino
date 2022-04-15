@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CustomthemeService} from "../../shared/service/customtheme.service";
 
 @Component({
   selector: 'app-contactme',
@@ -6,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contactme.component.scss']
 })
 export class ContactmeComponent implements OnInit {
+  bgtheme: string = "";
+  texttheme: string = "";
+  ptheme:number=0;
 
-  constructor() { }
-
+  constructor(customthemeservice: CustomthemeService) {
+    this.bgtheme = customthemeservice.btheme;
+    this.texttheme = customthemeservice.ttheme;
+    this.ptheme = customthemeservice.ptheme;
+  }
   ngOnInit(): void {
   }
 
