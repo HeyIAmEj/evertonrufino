@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'sobre', component: AboutmeComponent },
   { path: 'contato', component: ContactmeComponent },
   { path: 'index', component: IndexComponent },
-  { path: '', component: AboutmeComponent },
+  { path: '', component: IndexComponent },
   { path: '**', component: IndexComponent },
 ];
 
@@ -26,7 +26,6 @@ export class AppRoutingModule {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.name = params['name'];
-      alert(name);
     });
   }
 }

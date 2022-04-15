@@ -39,6 +39,9 @@ export class MobilemenuComponent implements OnInit, DoCheck{
     }
   }
 
+  closeMenu(){
+    this.isCollapsed = true;
+  }
 
   toggleMenu() {
     this.isCollapsed = !this.isCollapsed;
