@@ -5,17 +5,11 @@
     <!--COLUNA DE MENU LATERAL -->
     <div class="col-md-3 h-100 pt-2 overflow-auto d-none d-md-block">
       <div class="row">
-        <div class="form-check form-switch d-flex justify-content-center" *ngIf="ischecked">
-          <input (change)="toggleTheme()" class="form-check-input" type="checkbox" role="switch" id="modoEscuro" checked>
-          <label class="form-check-label px-1" for="modoEscuro">
-            <mat-icon aria-hidden="false" class="p-0 m-0" aria-label="MenuIcon">light_mode</mat-icon>
-          </label>
+        <div class="pb-2 d-flex justify-content-center" *ngIf="ischecked">
+          <mat-icon (click)="toggleTheme()" style="cursor:pointer;" aria-hidden="false" class="p-0 m-0" aria-label="MenuIcon">light_mode</mat-icon>
         </div>
-        <div class="form-check form-switch d-flex justify-content-center" *ngIf="!ischecked">
-          <input (change)="toggleTheme()" class="form-check-input" type="checkbox" role="switch" id="modoClaro">
-          <label class="form-check-label px-1" for="modoClaro">
-            <mat-icon aria-hidden="false" class="p-0 m-0" aria-label="MenuIcon">dark_mode</mat-icon>
-          </label>
+        <div class="pb-2 d-flex justify-content-center" *ngIf="!ischecked">
+          <mat-icon (click)="toggleTheme()" style="cursor:pointer;" aria-hidden="false" class="p-0 m-0" aria-label="MenuIcon">dark_mode</mat-icon>
         </div>
 
       </div>
