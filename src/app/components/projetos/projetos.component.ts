@@ -13,6 +13,7 @@ export class ProjetosComponent implements OnInit, DoCheck {
   ptheme: number = 0;
   customthemeservice: CustomthemeService;
   filtroAtivo: string = "";
+  withoutFiltro:boolean = true;
   projetos: Imodels[] = [];
 
   constructor(customthemeservice: CustomthemeService) {
@@ -24,9 +25,33 @@ export class ProjetosComponent implements OnInit, DoCheck {
   ngOnInit(): void {
     this.setTheme();
     this.projetos = [
-      {id:1, nome:"Julie", descricao:"Projeto de Assistente Virtual para automação residencial utilizando Arduino/Raspberry. Utiliza API's de Speech Recognition e Text-To-Speech para possibilitar uma interação melhor com o Software.",  estado:"Em Andamento", isPublico:false, isPessoal:true, linguagem : ["", "Java"]},
-      {id:2, nome:"My Introduction", descricao:"Portifólio de apresentação pessoal e profissional utilizando conceitos bases de Angular. Também utilizo o framework Bootstrap.",  estado:"Em andamento", isPublico:true, isPessoal:true, linguagem : ["", "Angular"]},
-      {id:3, nome:"Spring Boot API", descricao:"Projeto realizado para finalização de Bootcamp em Spring Boot. Utiliza tecnologias como Spring Boot, Swagger e JUnit.",  estado:"Finalizado", isPublico:true, isPessoal:true, linguagem : ["", "Java", "Backend"]},
+      {
+        id: 1,
+        nome: "Julie",
+        descricao: "Projeto de Assistente Virtual para automação residencial utilizando Arduino/Raspberry. Utiliza API's de Speech Recognition e Text-To-Speech para possibilitar uma interação melhor com o Software.",
+        estado: "Em Andamento",
+        isPublico: false,
+        isPessoal: true,
+        linguagem: ["Java"]
+      },
+      {
+        id: 2,
+        nome: "My Introduction",
+        descricao: "Portifólio de apresentação pessoal e profissional utilizando conceitos bases de Angular. Também utilizo o framework Bootstrap.",
+        estado: "Em andamento",
+        isPublico: true,
+        isPessoal: true,
+        linguagem: ["Angular"]
+      },
+      {
+        id: 3,
+        nome: "Spring Boot API",
+        descricao: "Projeto realizado para finalização de Bootcamp em Spring Boot. Utiliza tecnologias como Spring Boot, Swagger e JUnit.",
+        estado: "Finalizado",
+        isPublico: true,
+        isPessoal: true,
+        linguagem: ["Java", "Backend"]
+      },
     ];
   }
 
@@ -41,7 +66,12 @@ export class ProjetosComponent implements OnInit, DoCheck {
   }
 
   trocarFiltro(nome: string) {
-    this.filtroAtivo = nome;
+    if (nome == "All") {
+      this.withoutFiltro = true;
+    } else {
+      this.withoutFiltro = false;
+      this.filtroAtivo = nome;
+    }
   }
 
   getProjetosFiltro(projeto: Imodels) {
