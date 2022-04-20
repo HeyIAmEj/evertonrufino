@@ -14,6 +14,7 @@ import { AboutmeComponent } from './components/aboutme/aboutme.component';
 import { ContactmeComponent } from './components/contactme/contactme.component';
 import { IndexComponent } from './components/index/index.component';
 import {MobilemenuComponent} from "./shared/mobilemenu/mobilemenu.component";
+import { ProjetosComponent } from './components/projetos/projetos.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {MobilemenuComponent} from "./shared/mobilemenu/mobilemenu.component";
     AboutmeComponent,
     ContactmeComponent,
     IndexComponent,
-    MobilemenuComponent
+    MobilemenuComponent,
+    ProjetosComponent
   ],
   imports: [
     BrowserModule,

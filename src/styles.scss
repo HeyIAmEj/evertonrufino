@@ -26,9 +26,9 @@ $theme-colors: (
   "light": #f8f9fa,
   "theme":$theme,
   "theme-dark":$theme-dark,
-  "theme-light":$theme-light
+  "theme-light":$theme-light,
+  "theme-half":#404040,
 );
-
 
 
 html, body {
@@ -60,16 +60,18 @@ body {
   background: #404040;
 }
 
-.active{
+.active {
   background: #61616130;
 }
 
 .active1 {
   background: $p1;
 }
+
 .active2 {
   background: $p2;
 }
+
 .active3 {
   background: $p3;
 }
@@ -80,5 +82,8 @@ body {
 }
 
 
-
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+.linkpointer {
+  cursor: pointer;
+}

@@ -1,0 +1,51 @@
+<!--COLUNA DE CONTEUDO-->
+
+
+<!--Linha 0-->
+<div class="row m-0 mt-1 h-100">
+  <div class="card col-12 w-100 {{bgtheme}}">
+    <p class="h4 m-2 card-title">Projetos</p>
+    <hr class="my-2">
+    <div class="card-body">
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb  justify-content-center">
+          <a (click)="trocarFiltro('Java')" class="breadcrumb-item linkpointer {{texttheme}}">Java</a>
+          <a (click)="trocarFiltro('Angular')" class="breadcrumb-item linkpointer {{texttheme}}">Angular</a>
+          <a (click)="trocarFiltro('Backend')" class="breadcrumb-item linkpointer {{texttheme}}">Backend</a>
+          <a (click)="trocarFiltro('Frontend')" class="breadcrumb-item linkpointer {{texttheme}}">Frontend</a>
+        </ol>
+      </nav>
+
+      <div *ngFor="let projeto of projetos">
+        <div *ngIf="getProjetosFiltro(projeto)">
+
+          <div class="card p-2 m-0 mb-3 bg-theme-half text-white">
+            <h1 class="card-title ">{{projeto.nome}}</h1>
+            <p class="lead">{{projeto.descricao}}</p>
+            <hr class="my-2">
+            <div class="row card-body p-0 m-0 col-12 ">
+              <div class="col-6 ">
+                <p>Data Início: {{projeto.data_inicio}}  - Data Término: {{projeto.data_termino}}</p>
+                <p>Status: {{projeto.estado}}</p>
+                <p>Link: </p>
+              </div>
+              <div class="col-6 ">
+                <p>Linguagens: {{projeto.linguagem}}</p>
+                <p>Visualização: {{projeto.isPublico}}</p>
+                <p>Projeto pessoal: {{projeto.isPessoal}}</p>
+              </div>
+              <div class="row p-0 m-0 col-12  ">
+                <a class="btn btn-primary btn-lg" href="{{projeto.link}}" role="button">Acesse
+                  o {{projeto.nome}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="py-1"></div>
+</div>
